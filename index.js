@@ -5,7 +5,7 @@
 
 var encode = encodeURIComponent;
 var decode = decodeURIComponent;
-var type = require('type');
+var type = require('component-type');
 
 /**
  * Parse the given query `str`.
@@ -19,7 +19,7 @@ exports.parse = function(str){
   if ('string' != typeof str) return {};
 
   str = str.trim();
-  
+
   if ('' == str) return {};
   if ('?' == str.charAt(0)) str = str.slice(1);
 

@@ -5,7 +5,6 @@
 
 var encode = encodeURIComponent;
 var decode = decodeURIComponent;
-var trim = require('trim');
 var type = require('type');
 
 /**
@@ -19,7 +18,8 @@ var type = require('type');
 exports.parse = function(str){
   if ('string' != typeof str) return {};
 
-  str = trim(str);
+  str = str.trim();
+  
   if ('' == str) return {};
   if ('?' == str.charAt(0)) str = str.slice(1);
 
